@@ -35,9 +35,13 @@ Thumbs.db
 # ========== #
 # Unity File #
 # ========== #
-assets/*.unity
+Assets/*.unity
 
-# ======= #
-#   Art   #
-# ======= #
-assets/Resources/Textures/
+# ====== #
+# Assets #
+# ====== #
+Assets/Resources/Textures/
+Assets/Resources/Fonts/
+Assets/Resources/Audio/
+Assets/Resources/Prefabs/
+
