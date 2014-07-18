@@ -5,6 +5,7 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+Meranda/ProjectSettings
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -35,13 +36,12 @@ Thumbs.db
 # ========== #
 # Unity File #
 # ========== #
-Assets/*.unity
+*.meta
 
 # ====== #
 # Assets #
 # ====== #
-Assets/Resources/Textures/
-Assets/Resources/Fonts/
-Assets/Resources/Audio/
-Assets/Resources/Prefabs/
+Meranda/Assets/Resources/Textures/
+Meranda/Assets/Resources/Fonts/
+Meranda/Assets/Resources/Audio/
 
