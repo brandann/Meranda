@@ -29,5 +29,8 @@ public class Hero : MonoBehaviour {
 		float cameraY = camera.transform.position.y;
 		float cameraZ = -20;
 		camera.transform.position = new Vector3(heroX, cameraY,cameraZ);
+		
+		//temp
+		Debug.Log(this.transform.position.x);
 	}
 }
