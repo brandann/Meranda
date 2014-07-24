@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: e0bf38f2162254cb1b7817fa9b3a3c4b
+guid: 0e1c9c6569549fb4cbf38ff33595f78c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: crab_01
+    21300000: mushroom_02
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,10 +38,14 @@ TextureImporter:
   alignment: 7
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 489
+  spritePixelsToUnits: 436
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
   spriteSheet:
     sprites: []
   spritePackingTag: 

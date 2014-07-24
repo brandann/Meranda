@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 9efac34199f7b274ab87f699c3fb818f
+guid: e29ba698d2bb4da479896d783a74b12e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 220px-Circle_-_black_simple.svg
+    21300000: snail02
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,10 +38,14 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 188
+  spritePixelsToUnits: 350
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
   spriteSheet:
     sprites: []
   spritePackingTag: 
