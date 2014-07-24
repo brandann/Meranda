@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class JumpController : MonoBehaviour {
@@ -36,10 +36,6 @@ public class JumpController : MonoBehaviour {
 		switch(currentActionState){
 		case(ActionState.ambient):
 			transform.rotation = Quaternion.identity;
-			//while(this.transform.rotation.z != 0){
-				//this.transform.RotateAround(this.transform.position,new Vector3(0,0,1),-45);
-			//}
-			// dont do anything
 			break;
 		case(ActionState.jumping):
 			if(mJumpHeight != mJumpTravel++){
