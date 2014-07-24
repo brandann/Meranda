@@ -5,11 +5,13 @@ public class IceParticle : MonoBehaviour {
 
 	public Sprite ice01, ice02, ice03, ice04, ice05;
 	int life;
+	public int lifeMin;
+	public int lifeMax;
 	
 	// Use this for initialization
 	void Start () {
 		randomSprite();
-		life = Random.Range(1,50);
+		life = Random.Range(lifeMin, lifeMax);
 	}
 	
 	// Update is called once per frame

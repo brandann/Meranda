@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.71994114, y: -3.74617839, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,11 +40,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3b4b8a81f266240999ceae2b040897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ice01: {fileID: 21300000, guid: 83cce84ed444f7649a40d4e3ebc28572, type: 3}
-  ice02: {fileID: 21300000, guid: 35b7f8adc4103444e8a7611b966d8908, type: 3}
-  ice03: {fileID: 21300000, guid: 8d2ee61fd30fdff459c74f62d37618cf, type: 3}
-  ice04: {fileID: 21300000, guid: d5f52acce243e1448b58948c158044aa, type: 3}
-  ice05: {fileID: 21300000, guid: 17cf623053af9644091473aba4b99515, type: 3}
+  ice01: {fileID: 21300000, guid: cad97533884459c4ea751e1128ee5d90, type: 3}
+  ice02: {fileID: 21300000, guid: cad97533884459c4ea751e1128ee5d90, type: 3}
+  ice03: {fileID: 21300000, guid: 5911d35a9345fd74984c2bd26441b5c4, type: 3}
+  ice04: {fileID: 21300000, guid: 5911d35a9345fd74984c2bd26441b5c4, type: 3}
+  ice05: {fileID: 21300000, guid: 558ab7cad8b16ba45ba54949f5a9bdef, type: 3}
+  lifeMin: 1
+  lifeMax: 20
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

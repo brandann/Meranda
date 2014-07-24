@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 72013ced939f38641baccb95a40594d2
+guid: 98d53913f6038bd478340a33cf2e4202
 TextureImporter:
   fileIDToRecycleName:
-    21300000: grass
+    21300000: mushroom_04
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,10 +35,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 696
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:

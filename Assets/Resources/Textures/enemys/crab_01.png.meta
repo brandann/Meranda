@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 8fb0f2bc09a4aa8429c52b5a937a3d7e
+guid: e0bf38f2162254cb1b7817fa9b3a3c4b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: how2draw
+    21300000: crab_01
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,14 +38,10 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 489
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 1024
-    textureFormat: -2
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
     sprites: []
   spritePackingTag: 

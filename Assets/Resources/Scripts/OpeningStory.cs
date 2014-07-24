@@ -20,7 +20,7 @@ public class OpeningStory : MonoBehaviour {
 	state lastState;
 	int count = 0;
 	int interval;
-	const int INTERVAL_MULT = 0;
+	public int INTERVAL_MULT = 1;
 	
 	mainCamera camera;
 
@@ -29,6 +29,7 @@ public class OpeningStory : MonoBehaviour {
 		this.guiText.text = one;
 		interval = one.Length * INTERVAL_MULT;
 		camera = GameObject.Find ("Main Camera").GetComponent<mainCamera>();
+		camera.transform.position = new Vector3(0,100,-20);
 	}
 	
 	// Update is called once per frame
