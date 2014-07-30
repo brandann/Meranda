@@ -42,5 +42,8 @@ public class HeroCharacter : GameCharacter {
 	
 	public string getName() {return name;}
 	private void moveBy(float x, float y, float z) { this.transform.position += new Vector3(x,y,z); }
-	private void moveCamera(){camera.transform.position = new Vector3(transform.position.x, camera.transform.position.y, -20);}
+	private void moveCamera(){
+		if(camera != null)
+			camera.transform.position = new Vector3(transform.position.x, camera.transform.position.y, -20);
+	}
 }

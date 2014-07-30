@@ -3,9 +3,12 @@ using System.Collections;
 
 public class HeroCollision : MonoBehaviour {
 
+	JumpController mJumpControl;
+
 	// Use this for initialization
 	void Start () {
 		print("hero collision");
+		mJumpControl = this.GetComponent<JumpController>();
 	}
 	
 	// Update is called once per frame
@@ -17,11 +20,16 @@ public class HeroCollision : MonoBehaviour {
 	{
 		string tag = other.tag;
 		switch(tag){
-			case("enemy"):
-				Destroy(this.gameObject);
-				break;
-			case("platform"):
-				break;
+		case("platform"):
+			if(mJumpControl.isFalling())
+				mJumpControl.resetJump();
+			break;
+		case("enemy"):
+			Destroy(this.gameObject);
+			break;
+		default:
+			mJumpControl.setFalling();
+			break;
 		}
 	}
 	

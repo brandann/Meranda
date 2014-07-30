@@ -25,6 +25,8 @@ public class JumpController : MonoBehaviour {
 		if (Input.GetAxis ("Jump") > 0f) {
 			if(currentActionState == ActionState.ambient){
 				currentActionState = ActionState.jumping;
+				BoxCollider2D boxCollider = this.GetComponent<BoxCollider2D>();
+				boxCollider.size = new Vector3(1,1,1);
 			}
 			else if(currentActionState == ActionState.jumping) {
 				if(mJumpHeight != MAX_JUMP_HEIGHT) {
@@ -46,13 +48,15 @@ public class JumpController : MonoBehaviour {
 			}
 			break;
 		case(ActionState.falling):
+			moveBy(0,-SPEED,0);
+			/*
 			if(mJumpTravel-- > 0){
 				moveBy(0,-SPEED,0);
 			}
 			if(mJumpTravel == 0) {
-				currentActionState = ActionState.ambient;
 				resetJump();
 			}
+			*/
 			break;
 		}
 		
@@ -66,7 +70,16 @@ public class JumpController : MonoBehaviour {
 			this.transform.RotateAround(this.transform.position,new Vector3(0, 0, 1), ROTATE_SPEED);
 	}
 	
-	private void resetJump(){
+	public void setFalling(){
+		BoxCollider2D boxCollider = this.GetComponent<BoxCollider2D>();
+		boxCollider.size = new Vector3(1,1,1);
+		currentActionState = ActionState.falling;
+	}
+	
+	public void resetJump(){
+		BoxCollider2D boxCollider = this.GetComponent<BoxCollider2D>();
+		boxCollider.size = new Vector3(2,1,1);
+		currentActionState = ActionState.ambient;
 		mJumpTravel = 0;
 		mJumpHeight = MIN_JUMP_HEIGHT;
 	}
