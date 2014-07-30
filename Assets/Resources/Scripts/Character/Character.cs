@@ -5,6 +5,7 @@ public class Character : MonoBehaviour {
 
 	protected Vector3 startPostion;
 	protected const float SPEED = .2f;
+	protected float speed = SPEED;
 	
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,6 @@ public class Character : MonoBehaviour {
 	}
 	
 	public Vector3 getStartPosition() { return startPostion; }
-	public float getSpeed() { return SPEED; }
+	public float getSpeed() { return speed; }
 	
 }

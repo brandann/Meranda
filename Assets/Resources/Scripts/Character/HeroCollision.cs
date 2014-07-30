@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCharacter : GameCharacter {
+public class HeroCollision : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		print("hero collision");
 	}
 	
 	// Update is called once per frame
@@ -15,15 +15,17 @@ public class EnemyCharacter : GameCharacter {
 	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		print ("Enemy Partilce collider");
 		string tag = other.tag;
 		switch(tag){
-		case("platform"):
-			break;
-		case("ice"):
-			break;
-		default:
-			break;
+			case("enemy"):
+				Destroy(this.gameObject);
+				break;
+			case("platform"):
+				break;
 		}
+	}
+	
+	void OnTriggerExit2D(Collider2D collision){
+		print ("hero collision exit");
 	}
 }

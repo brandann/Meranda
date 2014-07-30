@@ -9,6 +9,7 @@ public class IceParticle : MonoBehaviour {
 	public int lifeMax;
 	float scale = .1f;
 	bool rand = true;
+	EnemyCharacter foundEnemy = null;
 	
 	// Use this for initialization
 	void Start () {
@@ -17,13 +18,25 @@ public class IceParticle : MonoBehaviour {
 		if(rand){
 			this.transform.localScale = new Vector3(.1f,.1f,1f);
 			this.transform.Rotate(new Vector3(0,0,Random.Range(0,360)));
+			//scale = 3/life;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(life-- <= 0)
+		if(life-- <= 0){
+			if(foundEnemy != null){
+				foundEnemy.setSlow(false);
+			}
 			Destroy(this.gameObject);
+		}
+		
+		// if attached to an enemy, return so particle does not
+		// travel anymore
+		if(foundEnemy != null){
+			return;
+		}
+		
 		if(rand){
 			this.transform.localScale += new Vector3(scale,scale,0f);
 			randomDirection();
@@ -52,6 +65,27 @@ public class IceParticle : MonoBehaviour {
 			case 4:
 				mSpriteRenderer.sprite = ice05;
 				break;
+		}
+	}
+	
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		print ("Ice Partilce collider");
+		string tag = other.tag;
+		switch(tag){
+		case("platform"):
+			Destroy(this.gameObject);
+			break;
+		case("enemy"):
+			foundEnemy = other.gameObject.GetComponent<EnemyCharacter>();
+			foundEnemy.setSlow(true);
+			life = 100;
+			SpriteRenderer mSpriteRenderer = GetComponent<SpriteRenderer>();
+			mSpriteRenderer.sprite = null;
+			break;
+		default:
+			Destroy(this.gameObject);
+			break;
 		}
 	}
 }
