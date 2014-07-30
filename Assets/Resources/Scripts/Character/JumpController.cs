@@ -6,7 +6,7 @@ public class JumpController : MonoBehaviour {
 	private enum ActionState {ambient, jumping, falling, walking};
 	private ActionState currentActionState = ActionState.ambient;
 	const int MIN_JUMP_HEIGHT = 2;
-	const int MAX_JUMP_HEIGHT = 30;
+	const int MAX_JUMP_HEIGHT = 50;
 	int mJumpHeight = MIN_JUMP_HEIGHT;
 	int mJumpTravel = 0;
 	const float ROTATE_SPEED = 30;

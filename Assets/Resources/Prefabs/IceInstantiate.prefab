@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb6bdbc3ec763144ba0f9f0c7238b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 50
+  life: 400
   countMult: 2
   magInc: 1
 --- !u!212 &21200000

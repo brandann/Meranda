@@ -24,7 +24,16 @@ public class IceInstantiate : MonoBehaviour {
 		if(life-- <= 0){
 			Destroy(this.gameObject);
 		}
-		roundEffect();
+		//roundEffect();
+		bombeffect();
+	}
+	
+	void bombeffect(){
+		spawn();spawn();
+		Vector3 r = Random.insideUnitCircle;
+		r *= 10;
+		x = (int) r.x;
+		y = (int) r.y;
 	}
 	
 	void roundEffect(){
@@ -44,6 +53,7 @@ public class IceInstantiate : MonoBehaviour {
 	}
 	
 	void spawn(){
+		//print ("ice spawn");
 		GameObject e = Instantiate(mIceParticle) as GameObject;
 		IceParticle spawnedParticle = e.GetComponent<IceParticle>();
 		if(spawnedParticle != null) {

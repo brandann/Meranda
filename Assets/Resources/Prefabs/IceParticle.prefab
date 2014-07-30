@@ -68,13 +68,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3b4b8a81f266240999ceae2b040897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ice01: {fileID: 21300000, guid: cad97533884459c4ea751e1128ee5d90, type: 3}
-  ice02: {fileID: 21300000, guid: cad97533884459c4ea751e1128ee5d90, type: 3}
-  ice03: {fileID: 21300000, guid: 5911d35a9345fd74984c2bd26441b5c4, type: 3}
-  ice04: {fileID: 21300000, guid: 5911d35a9345fd74984c2bd26441b5c4, type: 3}
-  ice05: {fileID: 21300000, guid: 558ab7cad8b16ba45ba54949f5a9bdef, type: 3}
-  lifeMin: 1
-  lifeMax: 20
+  ice01: {fileID: 21300000, guid: 76d03078380ce744da92d0e40f2153a1, type: 3}
+  ice02: {fileID: 21300000, guid: a7f99f701692a594d9ba1e3ed957c0fa, type: 3}
+  ice03: {fileID: 21300000, guid: 28bf5318c696a9646843e365ce0e4570, type: 3}
+  ice04: {fileID: 21300000, guid: a7f99f701692a594d9ba1e3ed957c0fa, type: 3}
+  ice05: {fileID: 21300000, guid: 28bf5318c696a9646843e365ce0e4570, type: 3}
+  lifeMin: 10
+  lifeMax: 30
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
