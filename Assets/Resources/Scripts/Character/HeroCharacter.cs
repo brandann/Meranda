@@ -8,6 +8,7 @@ public class HeroCharacter : GameCharacter {
 	SpriteController mSpriteController;
 	GameObject mIceInsantiate;
 	mainCamera camera;
+	public float lastMovment;
 	
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,8 @@ public class HeroCharacter : GameCharacter {
 		
 		float movement = Input.GetAxis ("Horizontal");
 		if(movement > float.MinValue){
-			moveBy(movement*SPEED,0,0);
+			lastMovment = movement * SPEED;
+			moveBy(lastMovment ,0 ,0);
 			moveCamera();
 			mSpriteController.setDirection(movement);
 		}

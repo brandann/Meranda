@@ -21,14 +21,21 @@ public class HeroCollision : MonoBehaviour {
 		string tag = other.tag;
 		switch(tag){
 		case("platform"):
-			if(mJumpControl.isFalling())
+			if(mJumpControl.isFalling()){
 				mJumpControl.resetJump();
+				float platY = other.transform.localPosition.y;// + other.gameObject.GetComponent<SpriteRenderer>().bounds.max.y/2;
+				this.transform.position = new Vector3(this.transform.position.x, platY, this.transform.position.z);
+			}
 			break;
 		case("enemy"):
 			Destroy(this.gameObject);
 			break;
+		case("wall"):
+			HeroCharacter h = this.gameObject.GetComponent<HeroCharacter>();
+			float velocity = h.lastMovment;
+			this.transform.position += new Vector3(-.2f, 0, 0);
+			break;
 		default:
-			mJumpControl.setFalling();
 			break;
 		}
 	}
