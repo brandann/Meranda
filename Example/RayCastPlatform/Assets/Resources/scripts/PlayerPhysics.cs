@@ -17,6 +17,7 @@ public class PlayerPhysics : MonoBehaviour {
 	public bool grounded;
 	[HideInInspector]
 	public bool movementStopped;
+	private float rayScaler = 1f;
 	
 	Ray ray;
 	RaycastHit hit;
@@ -38,7 +39,7 @@ public class PlayerPhysics : MonoBehaviour {
 		
 		for (int i = 0; i<3; i ++) {
 			float dir = Mathf.Sign(deltaY);
-			float x = (p.x + c.x - s.x/2) + s.x/2 * i; // Left, centre and then rightmost point of collider
+			float x = (p.x + c.x - s.x/2) + s.x/2 * (i * rayScaler); // Left, centre and then rightmost point of collider
 			float y = p.y + c.y + s.y/2 * dir; // Bottom of collider
 			
 			ray = new Ray(new Vector2(x,y), new Vector2(0,dir));
@@ -69,7 +70,7 @@ public class PlayerPhysics : MonoBehaviour {
 		for (int i = 0; i<3; i ++) {
 			float dir = Mathf.Sign(deltaX);
 			float x = p.x + c.x + s.x/2 * dir;
-			float y = p.y + c.y - s.y/2 + s.y/2 * i;
+			float y = p.y + c.y - s.y/2 + s.y/2 * (i * rayScaler);
 			
 			ray = new Ray(new Vector2(x,y), new Vector2(dir,0));
 			Debug.DrawRay(ray.origin,ray.direction);
