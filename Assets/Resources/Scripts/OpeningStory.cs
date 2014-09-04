@@ -21,7 +21,6 @@ public class OpeningStory : MonoBehaviour {
 	int count = 0;
 	int interval;
 	public int INTERVAL_MULT = 1;
-	public string open_application;
 	
 	mainCamera camera;
 
@@ -35,11 +34,6 @@ public class OpeningStory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		if (Input.GetAxis ("Jump") > 0f) {
-			Application.LoadLevel(open_application);
-		}
-		
 		count++;
 		if (count > interval) {
 			count = 0;
@@ -77,7 +71,10 @@ public class OpeningStory : MonoBehaviour {
 				case state.six:
 					currentState = state.seven;
 					this.guiText.text = seven;
-					Application.LoadLevel(open_application);
+					camera.transform.position = new Vector3(0,0,-20);
+					//camera.camera.backgroundColor = new Color(70,147,236,0);
+					//camera.audio.PlayOneShot(backgroundAudio);
+					camera.audio.Play();
 					break;
 				}
 			}

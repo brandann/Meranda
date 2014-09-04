@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: e29ba698d2bb4da479896d783a74b12e
+guid: 2581a9b7069c46a4484c7aa3e160a10e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: snail02
+    21300000: temp (1)
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,10 +35,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 350
+  spritePixelsToUnits: 945
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:

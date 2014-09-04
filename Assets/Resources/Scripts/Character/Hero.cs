@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HeroCharacter : GameCharacter {
-
-	string name;
+public class Hero : MonoBehaviour {
+	
+	const float SPEED = .2f;
+	const float SPEED_MULT = 50f;
 	
 	SpriteController mSpriteController;
 	GameObject mIceInsantiate;
@@ -20,17 +21,23 @@ public class HeroCharacter : GameCharacter {
 	void Update () {
 		
 		float movement = Input.GetAxis ("Horizontal");
-		if(movement > float.MinValue){
-			moveBy(movement*SPEED,0,0);
-			moveCamera();
-			mSpriteController.setDirection(movement);
-		}
+		moveBy(movement*SPEED,0,0);
+		mSpriteController.setDirection(movement);
 		if(Input.GetKeyDown(KeyCode.Alpha1)){
 			spawnIce ();
 		}
 	}
 	
-	
+	private void moveBy(float x, float y, float z){
+		this.transform.position += new Vector3(x,y,z);
+		float heroX = transform.position.x;
+		float cameraY = camera.transform.position.y;
+		float cameraZ = -20;
+		camera.transform.position = new Vector3(heroX, cameraY,cameraZ);
+		
+		//temp
+		Debug.Log(this.transform.position.x);
+	}
 	
 	void spawnIce(){
 		GameObject e = Instantiate(mIceInsantiate) as GameObject;
@@ -39,8 +46,4 @@ public class HeroCharacter : GameCharacter {
 			e.transform.position = this.transform.position;
 		}
 	}
-	
-	public string getName() {return name;}
-	private void moveBy(float x, float y, float z) { this.transform.position += new Vector3(x,y,z); }
-	private void moveCamera(){camera.transform.position = new Vector3(transform.position.x, camera.transform.position.y, -20);}
 }

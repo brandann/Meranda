@@ -13,6 +13,7 @@ public class GameCharacter : Character {
 		
 		// Update is called once per frame
 		void Update () {
+			
 		}
 		
 	#endregion
@@ -50,11 +51,11 @@ public class GameCharacter : Character {
 		public bool  isAlive()    {return alive;}
 		
 		public void  setAlive(bool a) {toggleAlive(a);}
-		public void  setSlow(bool s)  {speed = (s)? SPEED/2:SPEED;}
 		
 	#endregion
 		
 	#region Vars
+	
 		float MAX_HEALTH;
 		float TOUCHED_DAMAGE;
 		float damage;

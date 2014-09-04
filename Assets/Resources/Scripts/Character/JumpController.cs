@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class JumpController : MonoBehaviour {
@@ -6,7 +6,7 @@ public class JumpController : MonoBehaviour {
 	private enum ActionState {ambient, jumping, falling, walking};
 	private ActionState currentActionState = ActionState.ambient;
 	const int MIN_JUMP_HEIGHT = 2;
-	const int MAX_JUMP_HEIGHT = 50;
+	const int MAX_JUMP_HEIGHT = 30;
 	int mJumpHeight = MIN_JUMP_HEIGHT;
 	int mJumpTravel = 0;
 	const float ROTATE_SPEED = 30;
@@ -25,8 +25,6 @@ public class JumpController : MonoBehaviour {
 		if (Input.GetAxis ("Jump") > 0f) {
 			if(currentActionState == ActionState.ambient){
 				currentActionState = ActionState.jumping;
-				BoxCollider2D boxCollider = this.GetComponent<BoxCollider2D>();
-				boxCollider.size = new Vector3(1,1,1);
 			}
 			else if(currentActionState == ActionState.jumping) {
 				if(mJumpHeight != MAX_JUMP_HEIGHT) {
@@ -38,6 +36,10 @@ public class JumpController : MonoBehaviour {
 		switch(currentActionState){
 		case(ActionState.ambient):
 			transform.rotation = Quaternion.identity;
+			//while(this.transform.rotation.z != 0){
+				//this.transform.RotateAround(this.transform.position,new Vector3(0,0,1),-45);
+			//}
+			// dont do anything
 			break;
 		case(ActionState.jumping):
 			if(mJumpHeight != mJumpTravel++){
@@ -48,15 +50,13 @@ public class JumpController : MonoBehaviour {
 			}
 			break;
 		case(ActionState.falling):
-			moveBy(0,-SPEED,0);
-			/*
 			if(mJumpTravel-- > 0){
 				moveBy(0,-SPEED,0);
 			}
 			if(mJumpTravel == 0) {
+				currentActionState = ActionState.ambient;
 				resetJump();
 			}
-			*/
 			break;
 		}
 		
@@ -70,16 +70,7 @@ public class JumpController : MonoBehaviour {
 			this.transform.RotateAround(this.transform.position,new Vector3(0, 0, 1), ROTATE_SPEED);
 	}
 	
-	public void setFalling(){
-		BoxCollider2D boxCollider = this.GetComponent<BoxCollider2D>();
-		boxCollider.size = new Vector3(1,1,1);
-		currentActionState = ActionState.falling;
-	}
-	
-	public void resetJump(){
-		BoxCollider2D boxCollider = this.GetComponent<BoxCollider2D>();
-		boxCollider.size = new Vector3(2,1,1);
-		currentActionState = ActionState.ambient;
+	private void resetJump(){
 		mJumpTravel = 0;
 		mJumpHeight = MIN_JUMP_HEIGHT;
 	}
